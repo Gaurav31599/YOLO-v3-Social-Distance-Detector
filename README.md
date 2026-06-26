@@ -16,11 +16,13 @@ A real-time social distancing monitor that uses a **pretrained YOLOv3** model (t
 ## Project structure
 
 ```
-├── main.py                    # Entry point — perspective-transform pipeline
-├── utils.py                   # Distance calculation and perspective helpers
-├── plot.py                    # Drawing: bird's-eye view and annotated frame
-├── social_distance_detector.py # Alternate simpler pipeline (Euclidean distance)
-├── yolov3.cfg                 # YOLOv3 architecture config
+├── src/
+│   ├── main.py                    # Entry point — perspective-transform pipeline
+│   ├── utils.py                   # Distance calculation and perspective helpers
+│   ├── plot.py                    # Drawing: bird's-eye view and annotated frame
+│   └── social_distance_detector.py # Alternate simpler pipeline (Euclidean distance)
+├── models/
+│   └── yolov3.cfg                 # YOLOv3 architecture config
 ├── requirements.txt
 └── .gitignore
 ```
@@ -56,7 +58,7 @@ wget https://pjreddie.com/media/files/yolov3.weights
 # Invoke-WebRequest -Uri https://pjreddie.com/media/files/yolov3.weights -OutFile yolov3.weights
 ```
 
-Place `yolov3.weights` in a `models/` directory (or pass its path with `-m`).
+Place `yolov3.weights` in the `models/` directory (or pass its path with `-m`).
 
 ### 4. Create output directories
 
@@ -67,7 +69,7 @@ mkdir output output_vid output/bird_eye_view
 ## Usage
 
 ```bash
-python main.py -v <path_to_video>
+python src/main.py -v <path_to_video>
 ```
 
 ### All arguments

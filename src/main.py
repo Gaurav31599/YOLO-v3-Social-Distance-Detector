@@ -168,7 +168,7 @@ if __name__== "__main__":
     parser.add_argument('-O', '--output_vid', action='store', dest='output_vid', default='./output_vid/' ,
                     help='Path for Output videos')
 
-    parser.add_argument('-m', '--model', action='store', dest='model', default='./models/',
+    parser.add_argument('-m', '--model', action='store', dest='model', default='../models/',
                     help='Path for models directory')
                     
     parser.add_argument('-u', '--uop', action='store', dest='uop', default='NO',
